@@ -1,0 +1,25 @@
+{
+	"name": "lyquidity/xbrl-tests",
+	"description": "Provides a harness to run the conformance suite tests for XBRL 2.1, XDT, XFI and Formulas using the XBRLlibrary for PHP ",
+	"keywords": ["lyquidity", "xml", "XPath 2.0", "conformance"],
+	"type": "library",
+	"homepage": "https://github.com/bseddon/XPath20",
+	"license": "GPL-3.0-only",
+	"authors": [
+		{
+			"name": "Bill Seddon",
+			"homepage": "https://github.com/bseddon"
+		}
+	],
+	"require": {
+		"php": "^7.0",
+		"lyquidity/xpath2" : "dev-master"
+	},
+	"autoload": {
+		"psr-4": { "lyquidity\\XPath2\\" : "./" }
+	},
+    "suggest": {
+        "lyquidity/xpath2-test": "Download the XQTS 1.0.3 conformance suite package from https://dev.w3.org/2006/xquery-test-suite/PublicPagesStagingArea/XQTS_1_0_3.zip the uzip it and 'define' variable 'CONFORMANCE_SUITE_BASE' to the unzip location"
+    }
+}
+
