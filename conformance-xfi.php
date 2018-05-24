@@ -58,7 +58,7 @@ if ( ! defined( 'CONFORMANCE_TEST_SUITE_XFI_LOCATION' ) )
 global $use_xbrl_functions;
 $use_xbrl_functions = true;
 
-if ( ! class_exists( "\XBRL", true ) )
+if ( ! class_exists( "\\XBRL", true ) )
 {
 	/**
 	 * Include XBRL

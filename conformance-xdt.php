@@ -28,7 +28,7 @@
  *
  */
 
-if ( ! class_exists( "\XBRL", true ) )
+if ( ! class_exists( "\\XBRL", true ) )
 {
 	/**
 	 * Include XBRL

@@ -35,7 +35,7 @@ if ( ! defined( 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION' ) )
 	define( 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION', 'D:/GitHub/xbrlquery/conformance/XBRL-CONF-2014-12-10/' );
 }
 
-if ( ! class_exists( "\XBRL", true ) )
+if ( ! class_exists( "\\XBRL", true ) )
 {
 	/**
 	 * Include XBRL
