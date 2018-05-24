@@ -1,4 +1,4 @@
-# XPath 2.0 processor for PHP
+# Conformance testing for the Lyquidity XBRL project
 
 **Table of contents**
 * [About the project](#about-the-project)
@@ -12,8 +12,21 @@
 
 This project provides a test harness to run the conformance suite test defined for XBRL 2.1, XDT, Formulas and Function Registry functions
 
-A small number of the tests are not used.  The XBRL processor only has incomplete support for reference link bases so these tests are not run
-for any of the conformance suites.
+### Test harness notes
+
+#### XBRL 2.1
+
+A small number of the tests are not used.  The XBRL processor only has incomplete support for reference link bases so tests using or relating to 
+reference links are not run for any of the conformance suites.  These tests include tests 291 V-12, V-13, V-14 and V-15
+
+#### Formulas
+
+The formula processor does support some of the specifications that do not yet have a recommended status such as 
+[Formula Tuples](http://www.xbrl.org/Specification/formulaTuples/CR-2011-11-30/formulaTuples-CR-2011-11-30.html)
+and [Vaiables Scope](http://www.xbrl.org/Specification/variables-scope/CR-2011-11-30/variables-scope-CR-2011-11-30.html).  However it
+does not support the [Variable Instances for Multi-Instance Processing and Chaining](http://www.xbrl.org/specification/instances/cr-2012-10-03/instances-cr-2012-10-03.html) specifications.
+
+This means the XBRL Formula processor test harness will not include tests in the groups 60300 (Instances processing) and 60400 (Instances chaining processing).
 
 ### Links
 
