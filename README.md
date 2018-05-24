@@ -32,9 +32,9 @@ This means the XBRL Formula processor test harness will not include tests in the
 
 This project does not include the conformance suite tests.  The relevant suite files can be downloaded:
 
-[XBRL-CONF-2014-12-10.zip](http://www.xbrl.org/2014/XBRL-CONF-2014-12-10.zip)
-[xdt-conf-cr4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip)
-[formula-conf-rec-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip)
+* [XBRL-CONF-2014-12-10.zip](http://www.xbrl.org/2014/XBRL-CONF-2014-12-10.zip)
+* [xdt-conf-cr4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip)
+* [formula-conf-rec-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip)
 
 ## Status
 
