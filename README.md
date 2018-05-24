@@ -33,8 +33,8 @@ This means the XBRL Formula processor test harness will not include tests in the
 This project does not include the conformance suite tests.  The relevant suite files can be downloaded:
 
 * [XBRL-CONF-2014-12-10.zip](http://www.xbrl.org/2014/XBRL-CONF-2014-12-10.zip)
-* [xdt-conf-cr4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip)
-* [formula-conf-rec-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip)
+* [XDT-CONF-CR4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip)
+* [FORMULA-CONF-REC-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip)
 
 ## Status
 
@@ -84,9 +84,15 @@ composer require lyquidity/xbrl-tests:dev-master --prefer-dist
 Or fork or download the repository.  It will also be necessary to download and install the [XML](https://github.com/bseddon/XBRL) project.
 
 You will then need to download the test suite zip file and unzip them to some location.  In your application you will also need to add 
-defines called 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION', 'CONFORMANCE_TEST_SUITE_FORMULA_LOCATION', 'CONFORMANCE_TEST_SUITE_XDT_LOCATION',
-'CONFORMANCE_TEST_SUITE_XFI_LOCATION' and 'CONFORMANCE_TEST_SUITE_GENERIC_LOCATION' and give them a value which is the location you used to 
-unzip the respective conformance test suite zip file.  See the example in the [getting started](#getting-started) section below. 
+defines called:
+* CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION
+* CONFORMANCE_TEST_SUITE_FORMULA_LOCATION
+* CONFORMANCE_TEST_SUITE_XDT_LOCATION
+* CONFORMANCE_TEST_SUITE_XFI_LOCATION and
+* CONFORMANCE_TEST_SUITE_GENERIC_LOCATION
+
+Give these a value which is the location you used to unzip the respective conformance test suite zip file.  
+See the example in the [getting started](#getting-started) section below. 
 
 ## Getting started
 
@@ -96,12 +102,16 @@ Assuming you have installed the library using composer then this PHP application
 <php
 require_once __DIR__ . '/vendor/autoload.php';
 
+define ( 'XBRL_CONF_LOCATION', '<location of the unzipped [XBRL-CONF-2014-12-10.zip](http://www.xbrl.org/2014/XBRL-CONF-2014-12-10.zip) file>' );
+define ( 'XDT_CONF_LOCATION', '<location of the unzipped [XDT-CONF-CR4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip) file>' );
+define ( 'FORMULA_CONF_LOCATION', '<location of the unzipped [FORMULA-CONF-REC-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip) file>' );
+
 // Create the various defines
-define( 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION', '<your unzip location>' );
-define( 'CONFORMANCE_TEST_SUITE_XDT_LOCATION', '<your unzip location>' );
-define( 'CONFORMANCE_TEST_SUITE_FORMULA_LOCATION', '<your unzip location>' );
-define( 'CONFORMANCE_TEST_SUITE_XFI_LOCATION', '<your unzip location>' );
-define( 'CONFORMANCE_TEST_SUITE_GENERIC_LOCATION', '<your unzip location>' );
+define( 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION', XBRL_CONF_LOCATION );
+define( 'CONFORMANCE_TEST_SUITE_XDT_LOCATION', XDT_CONF_LOCATION );
+define( 'CONFORMANCE_TEST_SUITE_FORMULA_LOCATION', FORMULA_CONF_LOCATION );
+define( 'CONFORMANCE_TEST_SUITE_XFI_LOCATION', FORMULA_CONF_LOCATION );
+define( 'CONFORMANCE_TEST_SUITE_GENERIC_LOCATION', FORMULA_CONF_LOCATION );
 
 // Run each test suite.  Note that some may run for a considerable time
 include __DIR__ . "/vendor/lyquidity/XBRL-tests/conformance-21.php";
