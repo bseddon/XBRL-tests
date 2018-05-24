@@ -102,11 +102,12 @@ Assuming you have installed the library using composer then this PHP application
 <php
 require_once __DIR__ . '/vendor/autoload.php';
 
-define ( 'XBRL_CONF_LOCATION', '<location of the unzipped [XBRL-CONF-2014-12-10.zip](http://www.xbrl.org/2014/XBRL-CONF-2014-12-10.zip) file>' );
-define ( 'XDT_CONF_LOCATION', '<location of the unzipped [XDT-CONF-CR4-2009-10-06.zip](http://www.xbrl.org/2009/xdt-conf-cr4-2009-10-06.zip) file>' );
-define ( 'FORMULA_CONF_LOCATION', '<location of the unzipped [FORMULA-CONF-REC-2013-09-12.zip](http://www.xbrl.org/specification/formula/rec-2011-10-24/conformance/formula-conf-rec-2013-09-12.zip) file>' );
+// Create the location defines
+define ( 'XBRL_CONF_LOCATION', '<location of the unzipped XBRL-CONF-2014-12-10.zip file>' );
+define ( 'XDT_CONF_LOCATION', '<location of the unzipped XDT-CONF-CR4-2009-10-06.zip file>' );
+define ( 'FORMULA_CONF_LOCATION', '<location of the unzipped FORMULA-CONF-REC-2013-09-12.zip file>' );
 
-// Create the various defines
+// Create the test defines
 define( 'CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION', XBRL_CONF_LOCATION );
 define( 'CONFORMANCE_TEST_SUITE_XDT_LOCATION', XDT_CONF_LOCATION );
 define( 'CONFORMANCE_TEST_SUITE_FORMULA_LOCATION', FORMULA_CONF_LOCATION );
