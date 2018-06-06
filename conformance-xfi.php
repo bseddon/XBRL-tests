@@ -68,7 +68,7 @@ if ( ! class_exists( "\\XBRL", true ) )
 
 XBRL::setValidationState( true );
 
-$log = XBRL_log::getInstance();
+$log = XBRL_Log::getInstance();
 $log->debugLog();
 
 $conformance_base = CONFORMANCE_TEST_SUITE_XFI_LOCATION;

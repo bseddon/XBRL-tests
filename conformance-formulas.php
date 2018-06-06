@@ -66,7 +66,7 @@ if ( ! class_exists( "\\XBRL", true ) )
 	require_once( __DIR__ . '/../source/XBRL.php' );
 }
 
-$log = XBRL_log::getInstance();
+$log = XBRL_Log::getInstance();
 $log->debugLog();
 
 XBRL::setValidationState();
