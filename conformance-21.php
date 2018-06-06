@@ -43,7 +43,7 @@ if ( ! class_exists( "\\XBRL", true ) )
 	require_once( __DIR__ . '/../source/XBRL.php' );
 }
 
-$log = XBRL_log::getInstance();
+$log = XBRL_Log::getInstance();
 $log->debugLog();
 
 /**
@@ -203,16 +203,16 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 	$xpath = new DOMXPath( dom_import_simplexml( $testCase )->ownerDocument );
 	$pi = $xpath->evaluate( 'string(//processing-instruction("xml-stylesheet"))' );
 	$result = preg_match( "/(type=\"(?<type>.*)\" )?href=\"(?<href>.*)\"/", $pi, $matches );
-	if ( isset( $matches['href'] ) )
-	{
-		$styleSheet = XBRL::resolve_path( $testCaseXmlFilename, $matches['href'] );
-
-		$xslt = new XSLTProcessor();
-		$xslt->importStylesheet( new SimpleXMLElement( file_get_contents( $styleSheet ) ) );
-		$html = $xslt->transformToXml( $testCase );
-		$htmlPage = basename( $testCaseXmlFilename ) . ".html";
-		// file_put_contents( $htmlPage, $html );
-	}
+	// if ( isset( $matches['href'] ) )
+	// {
+	// 	$styleSheet = XBRL::resolve_path( $testCaseXmlFilename, $matches['href'] );
+    //
+	// 	$xslt = new XSLTProcessor();
+	// 	$xslt->importStylesheet( new SimpleXMLElement( file_get_contents( $styleSheet ) ) );
+	// 	$html = $xslt->transformToXml( $testCase );
+	// 	$htmlPage = basename( $testCaseXmlFilename ) . ".html";
+	// 	// file_put_contents( $htmlPage, $html );
+	// }
 
 	foreach ( $testCase->children() as $key => $variation )
 	{
@@ -269,7 +269,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		// $id = (int)str_replace( "V-", "", $source['variation id'] );
 		// if ( $id < 10 ) continue;
 		$id = str_replace( "V-", "", $source['variation id'] );
-		// if ( $id != '01' ) continue;
+		// if ( $id != '1' ) continue;
 
 		// These tests will never be run because they test arc role overrides on reference linkbases which has not been implemented
 		if ( $testid == '291' && in_array( $id, array( '12', '13', '14', '15' ) ) ) continue;
