@@ -39,6 +39,7 @@ use lyquidity\XPath2\DOM\XmlSchema;
 use lyquidity\XPath2\CoreFuncs;
 use lyquidity\xml\QName;
 use lyquidity\XPath2\XPath2Exception;
+use lyquidity\xml\schema\SchemaTypes;
 
 global $use_xbrl_functions, $debug_statements;
 // Are documents to be processed in a way that uses formula information
@@ -73,6 +74,12 @@ XBRL::setValidationState();
 
 global $conformance_base;
 $conformance_base = CONFORMANCE_TEST_SUITE_FORMULA_LOCATION;
+// Make sure the path looks like a Linux path and ends in a forward slash
+$conformance_base = str_replace( "\\", "/", $conformance_base );
+if ( ! SchemaTypes::endsWith( $conformance_base, "/" ) )
+{
+	$conformance_base .= "/";
+}
 
 $run10000SeriesTests = true;
 $run20000SeriesTests = true;
@@ -340,8 +347,8 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 {
 	global $conformance_base;
 
-	$testCaseFolder = dirname( "$conformance_base/$testCaseXmlFilename" );
-	$testCase = simplexml_load_file( "$conformance_base/$testCaseXmlFilename" );
+	$testCaseFolder = dirname( "$conformance_base$testCaseXmlFilename" );
+	$testCase = simplexml_load_file( "$conformance_base$testCaseXmlFilename" );
 
 	$attributes = $testCase->attributes();
 	$outpath = (string) $attributes->outpath;
@@ -365,6 +372,11 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		);
 
 		// === Put specific test conditions here (begin) ====
+
+		if ( $testid == "11021" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
 
 		if ( $testid == "11023" )
 		{

@@ -60,75 +60,75 @@ $run400Series = true;
 
 if ( $run100Series )
 {
-	performTestcase( $log, "102", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\102-item.xml' );
-	performTestcase( $log, "103", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\103-type.xml' );
-	performTestcase( $log, "104", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\104-tuple.xml' );
-	performTestcase( $log, "105", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\105-balance.xml' );
-	performTestcase( $log, "106", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\106-targetNamespace.xml' );
-	performTestcase( $log, "107", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\107-DTSWithLinkbaseInSchema.xml' );
-	performTestcase( $log, "114", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\114-lax-validation-testcase.xml' );
-	performTestcase( $log, "115", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\115-ArcroleAndRoleRefs-testcase.xml' );
-	performTestcase( $log, "155", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\155-TypeExtension.xml' );
-	performTestcase( $log, "160", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\160-UsedOn.xml' );
-	performTestcase( $log, "161", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\100-schema\161-Appinfo.xml' );
+	performTestcase( $log, "102", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/102-item.xml' );
+	performTestcase( $log, "103", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/103-type.xml' );
+	performTestcase( $log, "104", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/104-tuple.xml' );
+	performTestcase( $log, "105", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/105-balance.xml' );
+	performTestcase( $log, "106", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/106-targetNamespace.xml' );
+	performTestcase( $log, "107", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/107-DTSWithLinkbaseInSchema.xml' );
+	performTestcase( $log, "114", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/114-lax-validation-testcase.xml' );
+	performTestcase( $log, "115", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/115-ArcroleAndRoleRefs-testcase.xml' );
+	performTestcase( $log, "155", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/155-TypeExtension.xml' );
+	performTestcase( $log, "160", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/160-UsedOn.xml' );
+	performTestcase( $log, "161", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/161-Appinfo.xml' );
 	// return;
 }
 
 if ( $run200Series )
 {
-	performTestcase( $log, "201", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\201-linkref.xml' );
-	performTestcase( $log, "202", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\202-xlinkLocator.xml' );
-	performTestcase( $log, "204", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\204-arcCycles.xml' );
-	performTestcase( $log, "205", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\205-roleDeclared.xml' );
-	performTestcase( $log, "206", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\206-arcDeclared.xml' );
-	performTestcase( $log, "207", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\207-arcDeclaredCycles.xml' );
-	performTestcase( $log, "208", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\208-balance.xml' );
-	performTestcase( $log, "209", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\209-Arcs.xml' );
-	performTestcase( $log, "210", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\210-relationshipEquivalence.xml' );
-	performTestcase( $log, "211", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\211-Testcase-sEqualUsedOn.xml' );
-	performTestcase( $log, "212", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\212-Testcase-linkbaseDocumentation.xml' );
-	performTestcase( $log, "213", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\213-SummationItemArcEndpoints.xml' );
-	performTestcase( $log, "214", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\214-lax-validation-testcase.xml' );
-	performTestcase( $log, "215", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\215-ArcroleAndRoleRefs-testcase.xml' );
-	performTestcase( $log, "220", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\220-NonStandardArcsAndTypes.xml' );
-	performTestcase( $log, "230", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\230-CustomLinkbasesAndLocators.xml' );
-	performTestcase( $log, "231", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\231-SyntacticallyEqualArcsThatAreNotEquivalentArcs.xml' );
-	performTestcase( $log, "291", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\291-inferArcOverride.xml' );
-	performTestcase( $log, "292", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\292-Embeddedlinkbaseinthexsd.xml' );
-	performTestcase( $log, "293", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\293-UsedOn.xml' );
-	performTestcase( $log, "299", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\200-linkbase\preferredLabel.xml' );
+	performTestcase( $log, "201", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/201-linkref.xml' );
+	performTestcase( $log, "202", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/202-xlinkLocator.xml' );
+	performTestcase( $log, "204", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/204-arcCycles.xml' );
+	performTestcase( $log, "205", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/205-roleDeclared.xml' );
+	performTestcase( $log, "206", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/206-arcDeclared.xml' );
+	performTestcase( $log, "207", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/207-arcDeclaredCycles.xml' );
+	performTestcase( $log, "208", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/208-balance.xml' );
+	performTestcase( $log, "209", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/209-Arcs.xml' );
+	performTestcase( $log, "210", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/210-relationshipEquivalence.xml' );
+	performTestcase( $log, "211", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/211-Testcase-sEqualUsedOn.xml' );
+	performTestcase( $log, "212", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/212-Testcase-linkbaseDocumentation.xml' );
+	performTestcase( $log, "213", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/213-SummationItemArcEndpoints.xml' );
+	performTestcase( $log, "214", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/214-lax-validation-testcase.xml' );
+	performTestcase( $log, "215", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/215-ArcroleAndRoleRefs-testcase.xml' );
+	performTestcase( $log, "220", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/220-NonStandardArcsAndTypes.xml' );
+	performTestcase( $log, "230", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/230-CustomLinkbasesAndLocators.xml' );
+	performTestcase( $log, "231", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/231-SyntacticallyEqualArcsThatAreNotEquivalentArcs.xml' );
+	performTestcase( $log, "291", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/291-inferArcOverride.xml' );
+	performTestcase( $log, "292", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/292-Embeddedlinkbaseinthexsd.xml' );
+	performTestcase( $log, "293", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/293-UsedOn.xml' );
+	performTestcase( $log, "299", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/preferredLabel.xml' );
 	// return;
 }
 
 if ( $run300Series )
 {
-	performTestcase( $log, '301', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\301-idScope.xml' );
-	performTestcase( $log, '302', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\302-context.xml' );
-	performTestcase( $log, '303', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\303-periodType.xml' );
-	performTestcase( $log, '304', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\304-unitOfMeasure.xml' );
-	performTestcase( $log, '305', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\305-decimalPrecision.xml' );
-	performTestcase( $log, '306', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\306-required.xml' );
-	performTestcase( $log, '307', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\307-schemaRef.xml' );
-	performTestcase( $log, '308', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\308-ArcroleAndRoleRefs-testcase.xml' );
-	performTestcase( $log, '314', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\314-lax-validation-testcase.xml' );
-	performTestcase( $log, '320', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\320-CalculationBinding.xml' );
-	performTestcase( $log, '321', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\321-internationalization.xml' );
-	performTestcase( $log, '322', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\322-XmlXbrlInteraction.xml' );
-	performTestcase( $log, '330', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\330-s-equal-testcase.xml' );
-	performTestcase( $log, '331', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\331-equivalentRelationships-testcase.xml' );
+	performTestcase( $log, '301', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/301-idScope.xml' );
+	performTestcase( $log, '302', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/302-context.xml' );
+	performTestcase( $log, '303', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/303-periodType.xml' );
+	performTestcase( $log, '304', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/304-unitOfMeasure.xml' );
+	performTestcase( $log, '305', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/305-decimalPrecision.xml' );
+	performTestcase( $log, '306', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/306-required.xml' );
+	performTestcase( $log, '307', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/307-schemaRef.xml' );
+	performTestcase( $log, '308', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/308-ArcroleAndRoleRefs-testcase.xml' );
+	performTestcase( $log, '314', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/314-lax-validation-testcase.xml' );
+	performTestcase( $log, '320', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/320-CalculationBinding.xml' );
+	performTestcase( $log, '321', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/321-internationalization.xml' );
+	performTestcase( $log, '322', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/322-XmlXbrlInteraction.xml' );
+	performTestcase( $log, '330', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/330-s-equal-testcase.xml' );
+	performTestcase( $log, '331', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/331-equivalentRelationships-testcase.xml' );
 	// This is a very long running test
 	// performTestcase( $log, '391', 'Common\300-instance\391-inferDecimalPrecision.xml' );
-	performTestcase( $log, '392', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\392-inferEssenceAlias.xml' );
-	performTestcase( $log, '395', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\395-inferNumericConsistency.xml' );
-	performTestcase( $log, '397', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\397-Testcase-SummationItem.xml' );
-	performTestcase( $log, '398', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\300-instance\398-Testcase-Nillable.xml' );
+	performTestcase( $log, '392', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/392-inferEssenceAlias.xml' );
+	performTestcase( $log, '395', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/395-inferNumericConsistency.xml' );
+	performTestcase( $log, '397', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/397-Testcase-SummationItem.xml' );
+	performTestcase( $log, '398', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/398-Testcase-Nillable.xml' );
 }
 
 if ( $run400Series )
 {
-	performTestcase( $log, '400', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\400-Misc\400-nestedElements.xml' );
-	performTestcase( $log, '401', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\400-Misc\401-datatypes.xml' );
-	performTestcase( $log, '402', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\related-standards\xlink\arc-duplication\arc-duplication-testcase.xml' );
+	performTestcase( $log, '400', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-Misc/400-nestedElements.xml' );
+	performTestcase( $log, '401', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-Misc/401-datatypes.xml' );
+	performTestcase( $log, '402', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/related-standards/xlink/arc-duplication/arc-duplication-testcase.xml' );
 	// These 403 tests will not be used.  The tests apply to tuples but the tests do not include instance documents with tuples.
 	// performTestcase( $log, '403', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\related-standards\xml-schema\uniqueParticleAttribution\uniqueParticleAttribution-testcase.xml' );
 }
