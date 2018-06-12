@@ -71,11 +71,28 @@ $tests = array(
 	"70212" => "70212-GenericReference-StaticAnalysis-Relationship/70212 GenericReference Relationship StaticAnalysis.xml",
 );
 
+/**
+ * This array is used to record any conformance warnings
+ * @var array $issues
+ */
+global $issues;
+$issues = array();
+
 foreach ( $tests as $testid => $href )
 {
+	// if ( $testid != '70018' ) continue;
+
 	performTestcase( $log, $testid, "$conformance_base$href" );
 }
 
+global $result;
+$result = array(
+	'success' => ! $issues,
+	'issues' => $issues
+);
+
+echo __FILE__ . "\n";
+file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 function opinionExample( $log )
 {
@@ -231,14 +248,14 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		}
 		if ( $testid == '70015' )
 		{
-			if ( (string)$variationAttributes->id < "V-00" )
+			if ( (string)$variationAttributes->id < "V-01" )
 			{
 				continue;
 			}
 		}
 		if ( $testid == '70016' )
 		{
-			if ( (string)$variationAttributes->id < "V-10" )
+			if ( (string)$variationAttributes->id < "V-01" )
 			{
 				continue;
 			}
@@ -252,7 +269,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		}
 		if ( $testid == '70018' )
 		{
-			if ( (string)$variationAttributes->id < "V-00" )
+			if ( (string)$variationAttributes->id < "V-01" )
 			{
 				continue;
 			}
@@ -266,7 +283,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		}
 		if ( $testid == '70121' )
 		{
-			if ( (string)$variationAttributes->id < "V-02" )
+			if ( (string)$variationAttributes->id < "V-01" )
 			{
 				continue;
 			}
@@ -338,6 +355,16 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 			// For example, 270 v-02.
 			if ( $resultsFile ) continue;
 			$log->conformance_issue( $testid, "Expected the test to be invalid", $source );
+
+			// Record the issue for external reporting
+			global $issues;
+			$issues[] = array(
+				'id' => $testid,
+				'variation' => $source['variation id'],
+				'expected' => $expected,
+				'actual' => 'valid'
+			);
+
 		}
 	}
 }

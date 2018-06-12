@@ -332,7 +332,8 @@ $result = array(
 	'issues' => $issues
 );
 
-file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+echo  __DIR__ . '/' .  basename( __FILE__, 'php' ) . "json\n";
+file_put_contents( __DIR__ . '/' .  basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 return;
 
@@ -345,6 +346,8 @@ return;
  */
 function performTestcase( $log, $testid, $testCaseXmlFilename )
 {
+	// if ( $testid != '22015' ) return;
+
 	global $conformance_base;
 
 	$testCaseFolder = dirname( "$conformance_base$testCaseXmlFilename" );
@@ -487,7 +490,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 			$functionTable->AddWithArity( 'http://www.example.com/wgt-avg/function', "PDxEV", 2, XPath2ResultType::NodeSet, function( $context, $provider, $args )
 			{
 				$result = array();
-				require_once __DIR__ . "/../source/XPathFunctions/getFactDimensionSEqual.php";
+				require_once __DIR__ . "/../xbrl/XPathFunctions/getFactDimensionSEqual.php";
 
 				foreach ( $args[0] as /** @var DOMXPathNavigator $pd */ $pd )
 				{
@@ -657,7 +660,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		if ( $testid == "47206" )
 		{
-			if ( $source['variation id'] != 'V-02' ) continue;
+			if ( $source['variation id'] < 'V-01' ) continue;
 		}
 
 		if ( $testid == "47212" )
@@ -676,6 +679,16 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		}
 
 		if ( $testid == "48220" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
+
+		if ( $testid == "48230" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
+
+		if ( $testid == "48240" )
 		{
 			if ( $source['variation id'] < 'V-01' ) continue;
 		}
@@ -730,9 +743,19 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 			if ( $source['variation id'] < 'V.01' ) continue;
 		}
 
+		if ( $testid == "0006" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
+
+		if ( $testid == "0012" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
+
 		if ( $testid == "0018" )
 		{
-			if ( $source['variation id'] < 'V-02' ) continue;
+			if ( $source['variation id'] < 'V-01' ) continue;
 		}
 
 		if ( $testid == "0022" )

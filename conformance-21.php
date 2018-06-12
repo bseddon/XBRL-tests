@@ -126,8 +126,8 @@ if ( $run300Series )
 
 if ( $run400Series )
 {
-	performTestcase( $log, '400', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-Misc/400-nestedElements.xml' );
-	performTestcase( $log, '401', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-Misc/401-datatypes.xml' );
+	performTestcase( $log, '400', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-misc/400-nestedElements.xml' );
+	performTestcase( $log, '401', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/400-misc/401-datatypes.xml' );
 	performTestcase( $log, '402', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/related-standards/xlink/arc-duplication/arc-duplication-testcase.xml' );
 	// These 403 tests will not be used.  The tests apply to tuples but the tests do not include instance documents with tuples.
 	// performTestcase( $log, '403', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common\related-standards\xml-schema\uniqueParticleAttribution\uniqueParticleAttribution-testcase.xml' );
@@ -141,7 +141,8 @@ $result = array(
 	'issues' => $issues
 );
 
-file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+echo __DIR__ . "/" .  basename( __FILE__, 'php' ) . 'json' . "\n";
+file_put_contents( __DIR__ . "/" .  basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 return;
 
@@ -193,6 +194,8 @@ function performAllTestcases( $log )
  */
 function performTestcase( $log, $testid, $testCaseXmlFilename )
 {
+	// if ( $testid != '220' ) return;
+
 	$testCaseFolder = dirname( $testCaseXmlFilename );
 	$testCase = simplexml_load_file( $testCaseXmlFilename );
 

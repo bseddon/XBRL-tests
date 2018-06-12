@@ -272,7 +272,7 @@ function processTest( $href, $log )
 		$attributes = $variation->attributes();
 		$id = (string)$attributes->id;
 
-		// if ( $id < "V-09" || $id > "V-09" ) continue;
+		// if ( $id < "V-04" || $id > "V-04" ) continue;
 
  		$name = $variation->name;
 
