@@ -86,15 +86,14 @@ performTestcase( $log, '270', CONFORMANCE_TEST_SUITE_XDT_LOCATION . '200-xbrldie
 // performTestcase( $log, '271', '200-xbrldie/271-PrimaryItemDimensionallyInvalidError/271-Testcase-PrimaryItemDimensionallyInvalidError.xml' );
 performTestcase( $log, '301', CONFORMANCE_TEST_SUITE_XDT_LOCATION . '300-factlist/301-factlist/301-factlist-testcase.xml' );
 
-// performAllTestcases( $log );
-
 global $result;
 $result = array(
 	'success' => ! $issues,
 	'issues' => $issues
 );
 
-file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+echo __DIR__ . '/' . basename( __FILE__, 'php' ) . "json\n";
+file_put_contents( __DIR__ . '/' . basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 return;
 

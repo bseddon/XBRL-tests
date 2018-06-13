@@ -229,7 +229,8 @@ $result = array(
 	'issues' => $issues
 );
 
-file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+echo __DIR__ . '/' . basename( __FILE__, 'php' ) . "json\n";
+file_put_contents( __DIR__ . '/' . basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 return;
 

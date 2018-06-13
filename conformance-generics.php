@@ -91,8 +91,8 @@ $result = array(
 	'issues' => $issues
 );
 
-echo __FILE__ . "\n";
-file_put_contents( basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+echo __DIR__ . '/' . basename( __FILE__, 'php' ) . "json\n";
+file_put_contents( __DIR__ . '/' . basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
 
 function opinionExample( $log )
 {
