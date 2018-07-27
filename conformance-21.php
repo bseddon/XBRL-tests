@@ -194,7 +194,7 @@ function performAllTestcases( $log )
  */
 function performTestcase( $log, $testid, $testCaseXmlFilename )
 {
-	// if ( $testid != '220' ) return;
+	// if ( $testid != '302' ) return;
 
 	$testCaseFolder = dirname( $testCaseXmlFilename );
 	$testCase = simplexml_load_file( $testCaseXmlFilename );
@@ -272,7 +272,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		// $id = (int)str_replace( "V-", "", $source['variation id'] );
 		// if ( $id < 10 ) continue;
 		$id = str_replace( "V-", "", $source['variation id'] );
-		// if ( $id != '1' ) continue;
+		// if ( $id != '11' ) continue;
 
 		// These tests will never be run because they test arc role overrides on reference linkbases which has not been implemented
 		if ( $testid == '291' && in_array( $id, array( '12', '13', '14', '15' ) ) ) continue;
