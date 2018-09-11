@@ -146,6 +146,8 @@ function performAllTestcases( $log )
  */
 function performTestcase( $log, $testid, $testCaseXmlFilename )
 {
+	// if ( $testid != "204" ) return;
+
 	$testCaseFolder = dirname( $testCaseXmlFilename );
 	$testCase = simplexml_load_file( $testCaseXmlFilename );
 
@@ -253,7 +255,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		// === Put specific test conditions here (begin) ====
 
-		// if ( $source['variation id'] != 'V-22' ) continue;
+		// if ( $source['variation id'] != 'V-01' ) continue;
 
 		// === (end) ========================================
 
