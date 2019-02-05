@@ -58,6 +58,9 @@ $run200Series = true;
 $run300Series = true;
 $run400Series = true;
 
+// performTestcase( $log, '397', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/397-Testcase-SummationItem.xml' );
+// return;
+
 if ( $run100Series )
 {
 	performTestcase( $log, "102", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/102-item.xml' );
@@ -272,7 +275,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		// $id = (int)str_replace( "V-", "", $source['variation id'] );
 		// if ( $id < 10 ) continue;
 		$id = str_replace( "V-", "", $source['variation id'] );
-		// if ( $id != '01' ) continue;
+		// if ( $id != '00' ) continue;
 
 		// These tests will never be run because they test arc role overrides on reference linkbases which has not been implemented
 		if ( $testid == '291' && in_array( $id, array( '12', '13', '14', '15' ) ) ) continue;
