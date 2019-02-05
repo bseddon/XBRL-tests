@@ -268,7 +268,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		// === (end) ========================================
 
-		$log->info( "$xsd ($testid-{$variationAttributes->id} $expected)" );
+		$log->info( "$xsd ($testid-{$variationAttributes->id})" );
 		$log->info( "    Name: " . ( empty( $variationName ) ? "no name provided" : "Name: $variationName" ) );
 		if ( ! empty( $variationDesc ) )
 		{
@@ -340,8 +340,8 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 					// Record the issue for external reporting
 					global $issues;
 					$issues[] = array(
-						'test' => $conformanceTestFile,
-						'variation' => $id,
+						'test' => $testid,
+						'variation' => $source['variation id'],
 						'type' => "expected error code",
 						'expected' => $errorCode,
 						'actual' => "",
@@ -358,8 +358,8 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 				// Record the issue for external reporting
 				global $issues;
 				$issues[] = array(
-					'test' => $conformanceTestFile,
-					'variation' => $id,
+					'test' => $testid,
+					'variation' => $source['variation id'],
 					'type' => "invalid error code",
 					'expected' => $errorCode,
 					'actual' => $ex->error,
