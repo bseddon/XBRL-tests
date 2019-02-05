@@ -81,12 +81,12 @@ if ( ! SchemaTypes::endsWith( $conformance_base, "/" ) )
 	$conformance_base .= "/";
 }
 
-$run10000SeriesTests = true;
-$run20000SeriesTests = true;
-$run30000SeriesTests = true;
-$run40000SeriesTests = true;
-$run50000SeriesTests = true;
-$run60000SeriesTests = true;
+$run10000SeriesTests = false; true;
+$run20000SeriesTests = false; true;
+$run30000SeriesTests = false; true;
+$run40000SeriesTests = false; true;
+$run50000SeriesTests = false; true;
+$run60000SeriesTests = false; true;
 $runExampleTests = true;
 
 /**
