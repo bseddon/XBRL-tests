@@ -58,7 +58,7 @@ $run200Series = true;
 $run300Series = true;
 $run400Series = true;
 
-// performTestcase( $log, '397', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/397-Testcase-SummationItem.xml' );
+// performTestcase( $log, '402', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/related-standards/xlink/arc-duplication/arc-duplication-testcase.xml' );
 // return;
 
 if ( $run100Series )

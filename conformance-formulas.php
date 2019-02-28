@@ -81,12 +81,12 @@ if ( ! SchemaTypes::endsWith( $conformance_base, "/" ) )
 	$conformance_base .= "/";
 }
 
-$run10000SeriesTests = false; true;
-$run20000SeriesTests = false; true;
-$run30000SeriesTests = false; true;
-$run40000SeriesTests = false; true;
-$run50000SeriesTests = false; true;
-$run60000SeriesTests = false; true;
+$run10000SeriesTests = true;
+$run20000SeriesTests = true;
+$run30000SeriesTests = true;
+$run40000SeriesTests = true;
+$run50000SeriesTests = true;
+$run60000SeriesTests = true;
 $runExampleTests = true;
 
 /**
@@ -96,7 +96,25 @@ $runExampleTests = true;
 global $issues;
 $issues = array();
 
+// performTestcase( $log, "22090", "20000 Variables/22090-Variable-Processing-VariableSetRelationships/22090 Variable Set Relationship.xml" );
+// performTestcase( $log, "23020", "20000 Variables/23020-Variable-AspectTests-TypedDimension/23020 AspectTests TypedDimension.xml" );
+// performTestcase( $log, "22180", "20000 Variables/22180-Variable-Processing-BindEmpty/22180 Bind To Empty Sequence.xml" );
+// performTestcase( $log, "32210", "30000 Assertions/32210-ExistenceAssertion-Processing/32210 Existence Assertion Processing.xml" );
+// performTestcase( $log, "60100", "60000 Extensions/60100 GenericMessages-Processing/60100 GenericMessages Processing.xml" );
+// performTestcase( $log, "60500", "60000 Extensions/60500 FormulaTuples-Processing/60500 FormulaTuples-Processing.xml" );
+//
+// global $result;
+// $result = array(
+// 	'success' => ! $issues,
+// 	'series' => array( '1000' => $run10000SeriesTests, '2000' => $run20000SeriesTests, '3000' => $run30000SeriesTests, '4000' => $run40000SeriesTests, '5000' => $run50000SeriesTests, '6000' => $run60000SeriesTests, 'examples' => $runExampleTests ),
+// 	'issues' => $issues
+// );
+//
+// echo  __DIR__ . '/' .  basename( __FILE__, 'php' ) . "json\n";
+// file_put_contents( __DIR__ . '/' .  basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
+//
 // return;
+
 if ( $run10000SeriesTests )
 {
 /* 1  */ performTestcase( $log, "11021", "10000 Formula/11021-Formula-StaticAnalysis-MissingConceptRule/11021_MissingConceptRule_testcase.xml" );
@@ -550,7 +568,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		if ( $testid == "23020" )
 		{
-			if ( $source['variation id'] < 'V-01' ) continue;
+			if ( $source['variation id'] < 'V-50' ) continue;
 		}
 
 		if ( $testid == "31210" )
