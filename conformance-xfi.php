@@ -169,6 +169,7 @@ foreach ( $xfiTests->entry as /** @var SimpleXMLElement $entry */ $entry )
 		case "90206 xfi.concept-substitutions/90206 xfi.concept-substitutions function.xml":
 		case "90213 xfi.filter-member-network-selection/90213 xfi.filter-member-network-selection function.xml":
 		case "90214 xfi.filter-member-DRS-selection/90214 xfi.filter-member-DRS-selection function.xml":
+		// case "90301 xfi.fact-explicit-scenario-dimension-value/90301 xfi.fact-explicit-scenario-dimension-value function.xml":
 		case "90304 xfi.fact-segment-remainder/90304 xfi.fact-segment-remainder function.xml":
 		case "90305 xfi.fact-scenario-remainder/90305 xfi.fact-scenario-remainder function.xml":
 		case "90306 xfi.fact-has-explicit-dimension/90306 xfi.fact-has-explicit-dimension function.xml":

@@ -255,7 +255,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		// === Put specific test conditions here (begin) ====
 
-		// if ( $source['variation id'] != 'V-01' ) continue;
+		// if ( $source['variation id'] != 'V-03' ) continue; // v-39, v-106, v-196
 
 		// === (end) ========================================
 

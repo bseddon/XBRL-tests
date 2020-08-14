@@ -96,6 +96,7 @@ $runExampleTests = true;
 global $issues;
 $issues = array();
 
+// performTestcase( $log, "61100", "60000 Extensions/61100 ConceptRelationsFilter-Processing/61100 ConceptRelationsFilter Processing.xml" );
 // performTestcase( $log, "22090", "20000 Variables/22090-Variable-Processing-VariableSetRelationships/22090 Variable Set Relationship.xml" );
 // performTestcase( $log, "23020", "20000 Variables/23020-Variable-AspectTests-TypedDimension/23020 AspectTests TypedDimension.xml" );
 // performTestcase( $log, "22180", "20000 Variables/22180-Variable-Processing-BindEmpty/22180 Bind To Empty Sequence.xml" );
@@ -748,7 +749,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		if ( $testid == "61100" )
 		{
-			if ( $source['variation id'] < 'V-01' ) continue;
+			if ( $source['variation id'] != 'V-21b' ) continue;
 		}
 
 		if ( $testid == "70018" )

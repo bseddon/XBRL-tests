@@ -58,7 +58,8 @@ $run200Series = true;
 $run300Series = true;
 $run400Series = true;
 
-// performTestcase( $log, '402', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/related-standards/xlink/arc-duplication/arc-duplication-testcase.xml' );
+// performTestcase( $log, '314', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/314-lax-validation-testcase.xml' );
+// performTestcase( $log, '302', CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/300-instance/302-context.xml' );
 // return;
 
 if ( $run100Series )
@@ -275,7 +276,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		// $id = (int)str_replace( "V-", "", $source['variation id'] );
 		// if ( $id < 10 ) continue;
 		$id = str_replace( "V-", "", $source['variation id'] );
-		// if ( $id != '00' ) continue;
+		// if ( $id != '06' ) continue;
 
 		// These tests will never be run because they test arc role overrides on reference linkbases which has not been implemented
 		if ( $testid == '291' && in_array( $id, array( '12', '13', '14', '15' ) ) ) continue;
@@ -355,6 +356,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 					case "305":
 					case "306":
 					case "307":
+					// case "314": This is validated while processing instance elements
 					case "320":
 					case "321":
 					case "322":
