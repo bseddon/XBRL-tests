@@ -42,10 +42,10 @@ use lyquidity\XPath2\XPath2Exception;
  * Conformance test functions for XBRL functions
  */
 
-define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
-define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
-define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
-define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
+if ( ! defined( 'UTILITY_LIBRARY_PATH' ) ) define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
+if ( ! defined( 'XML_LIBRARY_PATH' ) ) define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
+if ( ! defined( 'XPATH20_LIBRARY_PATH' ) ) define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
+if ( ! defined( 'LOG_LIBRARY_PATH' ) ) define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
 
 if ( ! defined( 'CONFORMANCE_TEST_SUITE_XFI_LOCATION' ) )
 {

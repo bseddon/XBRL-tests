@@ -49,10 +49,10 @@ $debug_statements = false;
 
 ini_set('xdebug.max_nesting_level', 512);
 
-define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
-define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
-define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
-define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
+if ( ! defined( 'UTILITY_LIBRARY_PATH' ) ) define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
+if ( ! defined( 'XML_LIBRARY_PATH' ) ) define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
+if ( ! defined( 'XPATH20_LIBRARY_PATH' ) ) define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
+if ( ! defined( 'LOG_LIBRARY_PATH' ) ) define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
 
 if ( ! defined( 'CONFORMANCE_TEST_SUITE_FORMULA_LOCATION' ) )
 {
@@ -103,6 +103,7 @@ $issues = array();
 // performTestcase( $log, "32210", "30000 Assertions/32210-ExistenceAssertion-Processing/32210 Existence Assertion Processing.xml" );
 // performTestcase( $log, "60100", "60000 Extensions/60100 GenericMessages-Processing/60100 GenericMessages Processing.xml" );
 // performTestcase( $log, "60500", "60000 Extensions/60500 FormulaTuples-Processing/60500 FormulaTuples-Processing.xml" );
+// performTestcase( $log, "42240", "40000 Filters/42240-ConceptFilter-Processing-ConceptCustomAttribute/42240 ConceptFilter Processing ConceptCustomAttribute.xml" );
 //
 // global $result;
 // $result = array(

@@ -520,11 +520,11 @@ function performTestcase291( $log, $taxonomy, $resultsFilename, $expected, $sour
 
 						if ( $expected == 'valid' )
 						{
-							if ( $text == $label ) continue;
+							if ( $text == $label ) break;
 						}
 						else
 						{
-							if ( $text != $label ) continue;
+							if ( $text != $label ) break;
 						}
 
 						XBRL_Log::getInstance()->taxonomy_validation( "", "Label prohibition/override result not correct",
@@ -554,7 +554,7 @@ function performTestcase291( $log, $taxonomy, $resultsFilename, $expected, $sour
 									'test' => $testId,
 								) + $source
 							);
-							continue;
+							break;
 						}
 
 						if ( ! isset( $requiresElementList[ $from ][ $to ] ) )
@@ -568,7 +568,7 @@ function performTestcase291( $log, $taxonomy, $resultsFilename, $expected, $sour
 									'test' => $testId,
 								) + $source
 							);
-							continue;
+							break;
 						}
 						break;
 

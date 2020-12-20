@@ -311,7 +311,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 			}
 			else
 			{
-				echo "$instanceFile ($testid-{$variationAttributes->id} $expected) $description\n";
+				echo "$instanceFile ($testid-{$variationAttributes->id}) $description\n";
 				$instance = \XBRL_Instance::FromInstanceDocument( "$testCaseFolder/$instanceFile" );
 
 				if ( $instance )
