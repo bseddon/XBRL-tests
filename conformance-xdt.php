@@ -133,7 +133,7 @@ function performAllTestcases( $log )
 		}
 		$testCaseXml = "$testCasesFolder/$testCaseFile";
 		// echo "performTestcase( \$log, '$id', '$testCasesFolder/$testCaseFile' );\n";
-		performTestcase( $id, $testCaseXml );
+		performTestcase( $log, $id, $testCaseXml );
 	}
 }
 
@@ -344,7 +344,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 	}
 }
 
-function previousTests()
+function previousTests( $instanceFile )
 {
 	// 001
 	// if ( $xsd != 'hypercubeDimensionTargetRoleInvalidURI.xsd' ) continue;

@@ -63,7 +63,8 @@ $run400Series = true;
 // performTestcase( $log, "161", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/161-Appinfo.xml' );
 // performTestcase( $log, "205", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/205-roleDeclared.xml' );
 // performTestcase( $log, "220", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/220-NonStandardArcsAndTypes.xml' );
-// return;
+performTestcase( $log, "201", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/201-linkref.xml' );
+return;
 
 if ( $run100Series )
 {
@@ -188,7 +189,7 @@ function performAllTestcases( $log )
 			$id = $matches['id'];
 		}
 		$testCaseXml = "$testCasesFolder/$testCaseFile";
-		performTestcase( $id, $testCaseXml );
+		performTestcase( $log, $id, $testCaseXml );
 	}
 }
 
@@ -279,7 +280,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 		// $id = (int)str_replace( "V-", "", $source['variation id'] );
 		// if ( $id < 10 ) continue;
 		$id = str_replace( "V-", "", $source['variation id'] );
-		// if ( $id != '08' ) continue;
+		if ( $id != '01' ) continue;
 
 		// These tests will never be run because they test arc role overrides on reference linkbases which has not been implemented
 		if ( $testid == '291' && in_array( $id, array( '12', '13', '14', '15' ) ) ) continue;
@@ -549,7 +550,7 @@ function performTestcase291( $log, $taxonomy, $resultsFilename, $expected, $sour
 							XBRL_Log::getInstance()->taxonomy_validation( "", "Label prohibition/override result not correct",
 								array(
 									'outcome' => 'invalid',
-									'expected' => "'$text'",
+									'expected' => "'$expected'",
 									'from' => $fromPath,
 									'test' => $testId,
 								) + $source
@@ -562,7 +563,7 @@ function performTestcase291( $log, $taxonomy, $resultsFilename, $expected, $sour
 							XBRL_Log::getInstance()->taxonomy_validation( "", "Label prohibition/override result not correct",
 								array(
 									'outcome' => 'invalid',
-									'expected' => "'$text'",
+									'expected' => "'$expected'",
 									'from' => $fromPath,
 									'to' => $toPath,
 									'test' => $testId,
@@ -632,7 +633,7 @@ function performTestcase391( $log, $instance, $resultsFilename, $expected, $sour
 		// This test has results in a file
 		if ( ! file_exists( "$resultsFilename" ) )
 		{
-			$log->conformance_issue( $testid, "The test results file for the variation is not valid", $source );
+			$log->conformance_issue( $testId, "The test results file for the variation is not valid", $source );
 			return false;
 		}
 
@@ -643,7 +644,7 @@ function performTestcase391( $log, $instance, $resultsFilename, $expected, $sour
 
 		if ( count( $instance_elements ) != count( $results_elements ) )
 		{
-			$log->conformance_issue( $testid, "391 Test and specimen results element counts are not the same", $source );
+			$log->conformance_issue( $testId, "391 Test and specimen results element counts are not the same", $source );
 			return false;
 		}
 
@@ -656,7 +657,7 @@ function performTestcase391( $log, $instance, $resultsFilename, $expected, $sour
 				// Find the corresponding element in the specimen results
 				if ( ! isset( $results_elements[ $id ] ) || ! count( $results_elements[ $id ] ) )
 				{
-					$log->conformance_issue( $testid, "The instance element id cannot be found in the speciment results", $source + array( 'id' => $id ) );
+					$log->conformance_issue( $testId, "The instance element id cannot be found in the speciment results", $source + array( 'id' => $id ) );
 					return false;
 				}
 
@@ -664,13 +665,13 @@ function performTestcase391( $log, $instance, $resultsFilename, $expected, $sour
 				{
 					if ( ! isset( $results_entry['precision'] ) )
 					{
-						$log->conformance_issue( $testid, "A precision is not defined", $source + array( 'id' => $id ) );
+						$log->conformance_issue( $testId, "A precision is not defined", $source + array( 'id' => $id ) );
 						continue;
 					}
 
 					if ( $results_entry['precision'] != $inferredPrecision )
 					{
-						$log->conformance_issue( $testid, "Does not match", $source + array( 'id' => $id ) );
+						$log->conformance_issue( $testId, "Does not match", $source + array( 'id' => $id ) );
 					}
 				}
 			}

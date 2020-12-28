@@ -104,6 +104,9 @@ $issues = array();
 // performTestcase( $log, "60100", "60000 Extensions/60100 GenericMessages-Processing/60100 GenericMessages Processing.xml" );
 // performTestcase( $log, "60500", "60000 Extensions/60500 FormulaTuples-Processing/60500 FormulaTuples-Processing.xml" );
 // performTestcase( $log, "42240", "40000 Filters/42240-ConceptFilter-Processing-ConceptCustomAttribute/42240 ConceptFilter Processing ConceptCustomAttribute.xml" );
+// performTestcase( $log, "32110", "30000 Assertions/32110-ExistenceAssertion-StaticAnalysis-Element/32110 Existence Assertion Element Static Analysis .xml" );
+// performTestcase( $log, "11204", "10000 Formula/11204-Formula-StaticAnalysis-sequenceSAVConflicts/11204-sequenceSAVConflicts_testcase.xml" );
+// return;
 //
 // global $result;
 // $result = array(
@@ -588,6 +591,11 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 			if ( $source['variation id'] < 'V-01' ) continue;
 		}
 
+		if ( $testid == "32110" )
+		{
+			if ( $source['variation id'] < 'V-01' ) continue;
+		}
+
 		if ( $testid == "32210" )
 		{
 			if ( $source['variation id'] < 'V-01' ) continue;
@@ -750,7 +758,7 @@ function performTestcase( $log, $testid, $testCaseXmlFilename )
 
 		if ( $testid == "61100" )
 		{
-			if ( $source['variation id'] != 'V-21b' ) continue;
+			if ( $source['variation id'] < 'V-01' ) continue;
 		}
 
 		if ( $testid == "70018" )
