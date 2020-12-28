@@ -31,6 +31,7 @@
 
 namespace tests\enumerations;
 
+use XBRL_Log;
 use lyquidity\xml\MS\XmlReservedNs;
 
 if ( ! defined( 'CONFORMANCE_TEST_SUITE_ENUMS_LOCATION' ) )

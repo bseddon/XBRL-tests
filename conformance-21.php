@@ -63,8 +63,8 @@ $run400Series = true;
 // performTestcase( $log, "161", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/100-schema/161-Appinfo.xml' );
 // performTestcase( $log, "205", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/205-roleDeclared.xml' );
 // performTestcase( $log, "220", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/220-NonStandardArcsAndTypes.xml' );
-performTestcase( $log, "201", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/201-linkref.xml' );
-return;
+// performTestcase( $log, "201", CONFORMANCE_TEST_SUITE_XBRL_21_LOCATION . 'Common/200-linkbase/201-linkref.xml' );
+// return;
 
 if ( $run100Series )
 {

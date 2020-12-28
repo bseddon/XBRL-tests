@@ -31,6 +31,8 @@
 
 namespace tests\generic;
 
+use XBRL_Log;
+
 if ( ! defined( 'CONFORMANCE_TEST_SUITE_GENERIC_LOCATION' ) )
 {
 	define( 'CONFORMANCE_TEST_SUITE_GENERIC_LOCATION', 'D:/GitHub/xbrlquery/conformance/conformance-formula/tests/70000 Linkbase/' );
