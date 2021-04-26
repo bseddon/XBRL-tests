@@ -50,6 +50,7 @@ $debug_statements = false;
 ini_set('xdebug.max_nesting_level', 512);
 
 if ( ! defined( 'UTILITY_LIBRARY_PATH' ) ) define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
+if ( ! defined( 'UTILITIES_LIBRARY_PATH' ) ) define( 'UTILITIES_LIBRARY_PATH', __DIR__ . '/../utilities/' );
 if ( ! defined( 'XML_LIBRARY_PATH' ) ) define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
 if ( ! defined( 'XPATH20_LIBRARY_PATH' ) ) define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
 if ( ! defined( 'LOG_LIBRARY_PATH' ) ) define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
