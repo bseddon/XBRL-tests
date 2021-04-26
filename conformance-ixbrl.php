@@ -62,15 +62,15 @@ global $issues;
 $issues = array();
 
 $testClass = 'all';
-$testClass = 'errors';
-$testClass = 'compares';
+// $testClass = 'errors';
+// $testClass = 'compares';
 $testCategory = array(
 	'baseURIs' => false,
 	'continuation' => false,
-	'exclude' => true,
-	'footnotes' => true,
+	'exclude' => false,
+	'footnotes' => false,
 	'format' => false,
-	'fraction' => false,
+	'fraction' => true,
 	'fullSizeTests' => false,
 	'header' => false,
 	'hidden' => false,
@@ -88,17 +88,26 @@ $testCategory = array(
 	'xmllang' => false
 );
 
+// Enable 'em all
+array_walk( $testCategory, function( &$value ) { $value = true; } );
+
 // cacheLocation can be any location where remote files can be cached
 $cacheLocation = "C:/LyquidityWeb/site2011/wp-content/uploads/sites/7/xbrl-validate/cache";
 $testCasesFolder = "D:/GitHub/xbrlquery/conformance/inlineXBRL-1.1-conformanceSuite-2020-04-08/";
 
-\lyquidity\ixbrl\XBRL_Inline::Test( $cacheLocation, $testCasesFolder, $testCategory, $testClass ); return;
+\lyquidity\ixbrl\XBRL_Inline::Test( $cacheLocation, $testCasesFolder, $testCategory, $testClass );
 
 global $result;
 $result = array(
 	'success' => ! $issues,
 	'issues' => $issues
 );
+
+if ( $issues )
+{
+	$log->warning('There are issues');
+	error_log( print_r( $issues, true  ) );
+}
 
 echo  __DIR__ . '/' .  basename( __FILE__, 'php' ) . "json\n";
 file_put_contents( __DIR__ . '/' .  basename( __FILE__, 'php' ) . 'json', json_encode( $result ) );
