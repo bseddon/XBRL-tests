@@ -63,7 +63,7 @@ $issues = array();
 
 $testClass = 'all';
 // $testClass = 'errors';
-// $testClass = 'compares';
+$testClass = 'compares';
 $testCategory = array(
 	'baseURIs' => false,
 	'continuation' => false,
