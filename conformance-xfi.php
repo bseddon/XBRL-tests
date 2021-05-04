@@ -43,6 +43,7 @@ use lyquidity\XPath2\XPath2Exception;
  */
 
 if ( ! defined( 'UTILITY_LIBRARY_PATH' ) ) define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
+if ( ! defined( 'UTILITIES_LIBRARY_PATH' ) ) define( 'UTILITIES_LIBRARY_PATH', __DIR__ . '/../utilities/' );
 if ( ! defined( 'XML_LIBRARY_PATH' ) ) define( 'XML_LIBRARY_PATH', __DIR__ . '/../xml/' );
 if ( ! defined( 'XPATH20_LIBRARY_PATH' ) ) define( 'XPATH20_LIBRARY_PATH',  __DIR__ . '/../XPath2/' );
 if ( ! defined( 'LOG_LIBRARY_PATH' ) ) define( 'LOG_LIBRARY_PATH', __DIR__ . '/../log/' );
@@ -84,6 +85,53 @@ $log->info( "There are " . count( $xfiTests->entry ) . " functions being tested"
  */
 global $issues;
 $issues = array();
+
+function debugTests( $conformance_base, $log )
+{
+	global $issues;
+	$href = '80153 xfi.precision/80153 xfi.precision function.xml';
+	$href = 'math functions/31001 pi functions testcase.xml';
+	$href = 'math functions/31002 exp functions testcase.xml';
+	$href = 'math functions/31003 exp10 functions testcase.xml';
+	$href = 'math functions/31004 log functions testcase.xml';
+	$href = 'math functions/31005 log10 functions testcase.xml';
+	$href = 'math functions/31006 pow functions testcase.xml';
+	$href = 'math functions/31007 sqrt functions testcase.xml';
+	$href = 'math functions/31008 sin functions testcase.xml';
+	$href = 'math functions/31009 cos functions testcase.xml';
+	$href = 'math functions/31010 tan functions testcase.xml';
+	$href = 'math functions/31011 asin functions testcase.xml';
+	$href = 'math functions/31012 acos functions testcase.xml';
+	$href = 'math functions/31013 atan functions testcase.xml';
+	$href = 'math functions/31014 atan2 functions testcase.xml';
+	$href = '90313 xfi.fact-typed-dimension-simple-value/90313 xfi.fact-typed-dimension-simple-value testcase.xml';
+	$href = '80300 xfi.taxonomy-refs/80300 xfi.taxonomy-refs testcase.xml';
+	$href = '80301 xfi.any-identifier/80301 xfi.any-identifier testcase.xml';
+	$href = '80302 xfi.unique-identifiers/80302 xfi.unique-identifiers testcase.xml';
+	$href = '80303 xfi.single-unique-identifier/80303 xfi.single-unique-identifier testcase.xml';
+	$href = '80304 xfi.any-start-date/80304 xfi.any-start-date testcase.xml';
+	$href = '80305 xfi.unique-start-dates/80305 xfi.unique-start-dates testcase.xml';
+	$href = '80306 xfi.single-unique-start-date/80306 xfi.single-unique-start-date testcase.xml';
+	$href = '80307 xfi.any-end-date/80307 xfi.any-end-date testcase.xml';
+	$href = '80308 xfi.unique-end-dates/80308 xfi.unique-end-dates testcase.xml';
+	$href = '80309 xfi.single-unique-end-date/80309 xfi.single-unique-end-date testcase.xml';
+	$href = '80310 xfi.any-instant-date/80310 xfi.any-instant-date testcase.xml';
+	$href = '80311 xfi.unique-instant-dates/80311 xfi.unique-instant-dates testcase.xml';
+	$href = '80312 xfi.single-unique-instant-date/80312 xfi.single-unique-instant-date testcase.xml';
+	$href = '80360 xfi.positive-filing-indicators/80360 xfi.positive-filing-indicators testcase.xml';
+	// $href = '80361 xfi.negative-filing-indicators/80361 xfi.negative-filing-indicators testcase.xml';
+	// $href = '80362 xfi.positive-filing-indicator/80362 xfi.positive-filing-indicator testcase.xml';
+	// $href = '80363 xfi.negative-filing-indicator/80363 xfi.negative-filing-indicator testcase.xml';
+
+	processTest( "$conformance_base$href", $log );
+	global $result;
+	$result = array(
+		'success' => ! $issues,
+		'issues' => $issues
+	);
+}
+
+debugTests( $conformance_base, $log ); return;
 
 foreach ( $xfiTests->entry as /** @var SimpleXMLElement $entry */ $entry )
 {
@@ -215,6 +263,39 @@ foreach ( $xfiTests->entry as /** @var SimpleXMLElement $entry */ $entry )
 		case "90601 xfi.xbrl-instance/90601 xfi.xbrl-instance function.xml":
 		case "90701 xfi.format-number/90701 xfi.format-number function.xml":
 			// continue 2;
+
+		case "math functions/31001 pi functions testcase.xml":
+		case "math functions/31002 exp functions testcase.xml":
+		case "math functions/31003 exp10 functions testcase.xml":
+		case "math functions/31004 log functions testcase.xml":
+		case "math functions/31005 log10 functions testcase.xml":
+		case "math functions/31006 pow functions testcase.xml":
+		case "math functions/31007 sqrt functions testcase.xml":
+		case "math functions/31008 sin functions testcase.xml":
+		case "math functions/31009 cos functions testcase.xml":
+		case "math functions/31010 tan functions testcase.xml":
+		case "math functions/31011 asin functions testcase.xml":
+		case "math functions/31012 acos functions testcase.xml":
+		case "math functions/31013 atan functions testcase.xml":
+		case "math functions/31014 atan2 functions testcase.xml":
+		case "80300 xfi.taxonomy-refs/80300 xfi.taxonomy-refs testcase.xml":
+		case "80301 xfi.any-identifier/80301 xfi.any-identifier testcase.xml":
+		case "80302 xfi.unique-identifiers/80302 xfi.unique-identifiers testcase.xml":
+		case "80303 xfi.single-unique-identifier/80303 xfi.single-unique-identifier testcase.xml":
+		case "80304 xfi.any-start-date/80304 xfi.any-start-date testcase.xml":
+		case "80305 xfi.unique-start-dates/80305 xfi.unique-start-dates testcase":
+		case "80306 xfi.single-unique-start-date/80306 xfi.single-unique-start-date testcase.xml":
+		case "80307 xfi.any-end-date/80307 xfi.any-end-date testcase.xml":
+		case "80308 xfi.unique-end-dates/80308 xfi.unique-end-dates testcase":
+		case "80309 xfi.single-unique-end-date/80309 xfi.single-unique-end-date testcase.xml":
+		case "80310 xfi.any-instant-date/80310 xfi.any-instant-date testcase.xml":
+		case "80311 xfi.unique-instant-dates/80311 xfi.unique-instant-dates testcase":
+		case "80312 xfi.single-unique-instant-date/80312 xfi.single-unique-instant-date testcase.xml":
+		case "80360 xfi.positive-filing-indicators/80360 xfi.positive-filing-indicators testcase.xml":
+		case "80361 xfi.negative-filing-indicators/80361 xfi.negative-filing-indicators testcase.xml":
+		case "80362 xfi.positive-filing-indicator/80362 xfi.positive-filing-indicator testcase.xml":
+		case "80363 xfi.negative-filing-indicator/80363 xfi.negative-filing-indicator testcase.xml":
+
 			break;
 
 		default:
@@ -264,6 +345,9 @@ function processTest( $href, $log )
 		$log->warning( " The test variations file cannot be found: $conformanceTestFile " );
 	}
 
+	/**
+	 * @var \SimpleXMLElement
+	 */
 	$testCases = simplexml_load_file( dirname( $href ) . "/$conformanceTestFile", "SimpleXMLElement", LIBXML_NOBLANKS );
 
 	$log->info( $testCases->name );
@@ -274,7 +358,7 @@ function processTest( $href, $log )
 		$attributes = $variation->attributes();
 		$id = (string)$attributes->id;
 
-		// if ( $id < "V-04" || $id > "V-04" ) continue;
+		// if ( $id < "V-05" || $id > "V-05" ) continue;
 
  		$name = $variation->name;
 
@@ -353,7 +437,7 @@ function processTest( $href, $log )
 
 			$provider = new NodeProvider( $nav );
 		}
-		else
+		else if ( isset( $schema ) )
 		{
 			XBRL_Instance::reset();
 
@@ -439,7 +523,7 @@ function processTest( $href, $log )
 		}
 		else
 		{
-			$test = trim( (string)$outputs->children( XBRL_Constants::$standardPrefixes[ STANDARD_PREFIX_CONFORMANCE_FUNCTION ] ) );
+			$test = trim( (string)$outputs->children( XBRL_Constants::$standardPrefixes[ STANDARD_PREFIX_CONFORMANCE_FUNCTION ] )->test );
 			$log->info( "    Error not expected" );
 			$log->info( "    Test: $test" );
 		}
@@ -461,9 +545,9 @@ function processTest( $href, $log )
 				$count = $result->getCount();
 				$result->MoveNext();
 				$result->Reset();
-				// foreach ( $result as $test )
+				// foreach ( $result as $item )
 				// {
-				// 	$x = 1;
+				// 	$x = $item->getValue();
 				// }
 			}
 
