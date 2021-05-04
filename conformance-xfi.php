@@ -119,9 +119,9 @@ function debugTests( $conformance_base, $log )
 	$href = '80311 xfi.unique-instant-dates/80311 xfi.unique-instant-dates testcase.xml';
 	$href = '80312 xfi.single-unique-instant-date/80312 xfi.single-unique-instant-date testcase.xml';
 	$href = '80360 xfi.positive-filing-indicators/80360 xfi.positive-filing-indicators testcase.xml';
-	// $href = '80361 xfi.negative-filing-indicators/80361 xfi.negative-filing-indicators testcase.xml';
-	// $href = '80362 xfi.positive-filing-indicator/80362 xfi.positive-filing-indicator testcase.xml';
-	// $href = '80363 xfi.negative-filing-indicator/80363 xfi.negative-filing-indicator testcase.xml';
+	$href = '80361 xfi.negative-filing-indicators/80361 xfi.negative-filing-indicators testcase.xml';
+	$href = '80362 xfi.positive-filing-indicator/80362 xfi.positive-filing-indicator testcase.xml';
+	$href = '80363 xfi.negative-filing-indicator/80363 xfi.negative-filing-indicator testcase.xml';
 
 	processTest( "$conformance_base$href", $log );
 	global $result;
@@ -358,7 +358,7 @@ function processTest( $href, $log )
 		$attributes = $variation->attributes();
 		$id = (string)$attributes->id;
 
-		// if ( $id < "V-05" || $id > "V-05" ) continue;
+		// if ( $id < "V-11" || $id > "V-11" ) continue;
 
  		$name = $variation->name;
 
@@ -543,11 +543,11 @@ function processTest( $href, $log )
 				// This is required to exercise results that can only generate
 				// an error when evaluated such as has-fallback-value
 				$count = $result->getCount();
-				$result->MoveNext();
-				$result->Reset();
+				// $result->MoveNext();
+				// $result->Reset();
 				// foreach ( $result as $item )
 				// {
-				// 	$x = $item->getValue();
+				//  	$x = $item->getValue();
 				// }
 			}
 
