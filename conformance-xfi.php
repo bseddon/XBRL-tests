@@ -123,7 +123,9 @@ function debugTests( $conformance_base, $log )
 	// $href = '80362 xfi.positive-filing-indicator/80362 xfi.positive-filing-indicator testcase.xml';
 	$href = '80363 xfi.negative-filing-indicator/80363 xfi.negative-filing-indicator testcase.xml';
 
-	processTest( "$conformance_base$href", $log );
+	$href = \XBRL::resolve_path( $conformance_base, $href );
+
+	processTest( $href, $log );
 	global $result;
 	$result = array(
 		'success' => ! $issues,
