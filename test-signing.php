@@ -30,9 +30,9 @@ XBRL::setValidationState( true );
 $log = XBRL_Log::getInstance();
 $log->debugLog();
 
-$signedXml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/signed/signed-instance.xml';
-$signedXml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/instances/tuple-instance.xml';
-$signedXml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/signed/example-signed.xml';
+$signedXml = __DIR__ . '/signed-instance.xml';
+$signedXml = __DIR__ . '/tuple-instance.xml';
+$signedXml = __DIR__ . '/example-signed.xml';
 
 $signer = new XBRL_Signer();
 
@@ -45,8 +45,8 @@ $signer = new XBRL_Signer();
  */
 function testSigning( $signer, $signedXml )
 {
-	$xml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/instances/tuple-instance.xml';
-	$xml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/instances/example.xml';
+	$xml = __DIR__ . '/tuple-instance.xml';
+	$xml = __DIR__ . '/example.xml';
 	$key = __DIR__ . '/client.key';
 	$cert = __DIR__ . '/client.crt';
 
