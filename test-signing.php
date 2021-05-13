@@ -36,6 +36,13 @@ $signedXml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/signed/example-
 
 $signer = new XBRL_Signer();
 
+/**
+ * Test sign an XML document
+ *
+ * @param \XBRL_Signer $signer
+ * @param string $signedXml Source XML
+ * @return void
+ */
 function testSigning( $signer, $signedXml )
 {
 	$xml = 'C:/Users/Administrator/Documents/xmlseclibs/assets/instances/tuple-instance.xml';
@@ -43,11 +50,12 @@ function testSigning( $signer, $signedXml )
 	$key = __DIR__ . '/client.key';
 	$cert = __DIR__ . '/client.crt';
 
-	$signer->sign_instance( $xml, $key, $cert, $signedXml );
-	$signer->sign_instance( $xml, $key, $cert, null );
+	$signer->sign_instance( $xml, $key, $cert, $signedXml ); // Embedded signature file
 	$verified = $signer->verity_instance( $signedXml );
+	// $signer->sign_instance( $xml, $key, $cert, null ); // Separate signature file
+	// $verified = $signer->verity_instance( $xml );
 }
-// testSigning( $signer, $signedXml ); return;
+testSigning( $signer, $signedXml ); return;
 
 if ( ! file_exists( __DIR__ . '/root.crt' ) || ! file_exists( __DIR__ . '/root.key' ) )
 {
