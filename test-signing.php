@@ -51,11 +51,11 @@ function testSigning( $signer, $signedXml )
 	$cert = __DIR__ . '/client.crt';
 
 	$signer->sign_instance( $xml, $key, $cert, $signedXml ); // Embedded signature file
-	$verified = $signer->verity_instance( $signedXml );
+	$verified = $signer->verify_instance( $signedXml );
 	// $signer->sign_instance( $xml, $key, $cert, null ); // Separate signature file
 	// $verified = $signer->verity_instance( $xml );
 }
-testSigning( $signer, $signedXml ); return;
+// testSigning( $signer, $signedXml ); return;
 
 if ( ! file_exists( __DIR__ . '/root.crt' ) || ! file_exists( __DIR__ . '/root.key' ) )
 {
@@ -75,8 +75,7 @@ if ( ! file_exists( __DIR__ . '/root.crt' ) || ! file_exists( __DIR__ . '/root.k
 	}
 }
 
-$dn = array(
-	'countryName'					=> 'UK',
+$dn = array(	'countryName'					=> 'UK',
 	'stateOrProvinceName'			=> 'Surrey',
 	'localityName'					=> 'New Malden',
 	'organizationName'				=> 'XBRL Query',
