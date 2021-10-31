@@ -1,15 +1,41 @@
 <?php
 
-if ( ! defined( 'UTILITY_LIBRARY_PATH' ) ) define( 'UTILITY_LIBRARY_PATH', __DIR__ . '/../utilities/' );
-if ( ! defined( 'UTILITIES_LIBRARY_PATH' ) ) define( 'UTILITIES_LIBRARY_PATH', __DIR__ . '/../utilities/' );
+use lyquidity\xmldsig\XAdES;
+use lyquidity\xmldsig\xml\SignatureProductionPlaceV2;
+use lyquidity\xmldsig\xml\SignerRoleV2;
+
+require_once __DIR__ . '/../../../xml-signer/xml-signer/autoload.php';
+require_once __DIR__ . '/../../../ocsp/requester/src/autoload.php';
+require __DIR__ . '/../../core/source/XBRL_Signing.php';
+
+$sourcePackageFilename = __DIR__ . '/../taxonomies/us-gaap-2018-01-31.zip';
+$targetPackageFilename = __DIR__ . '/../taxonomies/us-gaap-2018-01-31-signed.zip';
+$certificateFile = 'D:\GitHub\xml-signer\finance.crt';
+$keyFile = 'D:\GitHub\xml-signer\finance.key';
+
+global $certificateBundlePath;
+$reflector = new \ReflectionClass('lyquidity\TSA\TSA');
+$ocspPath = dirname( dirname( dirname( dirname( $reflector->getFileName() ) ) ) );
+$certificateBundlePath = $ocspPath . '/cacerts-for-php-curl/cacerts.pem';
+
+XBRL_Signing::addSignature( $sourcePackageFilename, $targetPackageFilename, $certificateFile, $keyFile, false, false, 'London', 'CEO' );
+// XBRL_Signing::addSignature( $sourcePackageFilename, $targetPackageFilename, $certificateFile, $keyFile, false, true , 
+// 	new SignatureProductionPlaceV2( 'London', null, null, null, 'UK' ), 
+// 	new SignerRoleV2( 'CEO' )
+// );
+
+XBRL_Signing::verifySignature( $targetPackageFilename );
+
+return;
+
+/*
+ * Below is the old test code for the now deleted XML-Signer.php script
+ */
 
 /**
- * Load the dictionary class
+ * Load the memory stream class
  */
-$utiltiesPath = isset( $_ENV['UTILITY_LIBRARY_PATH'] )
-	? $_ENV['UTILITY_LIBRARY_PATH']
-	: ( defined( 'UTILITY_LIBRARY_PATH' ) ? UTILITY_LIBRARY_PATH : __DIR__ . "/../utilities" );
-require_once "$utiltiesPath/MemoryStream.php";
+require_once __DIR__ . "/../utilities/MemoryStream.php";
 
 /**
  * Include the XBRL and example test code
@@ -33,6 +59,14 @@ $log->debugLog();
 $signedXml = __DIR__ . '/signed-instance.xml';
 $signedXml = __DIR__ . '/tuple-instance.xml';
 $signedXml = __DIR__ . '/example-signed.xml';
+
+class XBRL_Signer
+{
+	function sign_instance() {}
+	function verify_instance() {}
+	function createRootCertificate() {}
+	function createClientCertificate() {}
+};
 
 $signer = new XBRL_Signer();
 
